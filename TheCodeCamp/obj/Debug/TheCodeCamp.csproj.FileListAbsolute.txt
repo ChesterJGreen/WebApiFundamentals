@@ -369,3 +369,5 @@ C:\Training\C#\webapifundamentals\TheCodeCamp\bin\System.Numerics.Vectors.xml
 C:\Training\C#\webapifundamentals\TheCodeCamp\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Training\C#\webapifundamentals\TheCodeCamp\bin\System.Text.Encodings.Web.xml
 C:\Training\C#\webapifundamentals\TheCodeCamp\bin\System.Threading.Tasks.Extensions.xml
+C:\Training\C#\webapifundamentals\TheCodeCamp\bin\AutoMapper.dll
+C:\Training\C#\webapifundamentals\TheCodeCamp\bin\AutoMapper.xml
