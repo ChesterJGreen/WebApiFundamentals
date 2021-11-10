@@ -9,10 +9,13 @@ using System.Web.Http;
 using System.Web.Mvc;
 using TheCodeCamp.Data;
 using TheCodeCamp.Models;
-using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using System.Web.Http.Routing;
+
+
 
 namespace TheCodeCamp.Controllers
 {
+    [RoutePrefix("api/camps")]
     public class CampsController : ApiController
     {
         private readonly ICampRepository _repository;
@@ -23,11 +26,13 @@ namespace TheCodeCamp.Controllers
             _repository = repository;
             _mapper = mapper;
         }
-        public async Task<IHttpActionResult> Get()
+        [Route("{moniker}")]
+        public async Task<IHttpActionResult> Get(string moniker)
         {
             try
             {
-                var result = await _repository.GetAllCampsAsync();
+                var result = await _repository.GetAllCampsAsync(moniker);
+                if (result == null) return NotFound();
 
                 //Mapping
                 var mappedResult = _mapper.Map<IEnumerable<CampModel>>(result);
