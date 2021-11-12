@@ -131,6 +131,26 @@ namespace TheCodeCamp.Controllers
                 return InternalServerError(ex);
             }
         }
+        [Route("{moniker}")]
+        public async Task<IHttpActionResult> Delete(string moniker)
+        {
+            try
+            {
+                var camp = await _repository.GetCampAsync(moniker);
+                if (camp == null) return NotFound();
+                _repository.DeleteCamp(camp);
+                if (await _repository.SaveChangesAsync())
+                {
+                    return Ok();
+                }
+                return InternalServerError();
+            }
+            catch (Exception ex)
+            {
+
+                return InternalServerError(ex);
+            }
+        }
     }
 
 }
