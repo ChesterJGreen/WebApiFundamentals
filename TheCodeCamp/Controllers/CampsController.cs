@@ -105,13 +105,13 @@ namespace TheCodeCamp.Controllers
             }
             return BadRequest(ModelState);
         }
-        [RouteAttribute("{moniker")]
+        [Route("{moniker}")]
         public async Task<IHttpActionResult> Put(string moniker, CampModel model)
 
         {
             try
             {
-                var camp = await _repository.GetAllCampsAsync(moniker);
+                var camp = await _repository.GetCampAsync(moniker);
                 if (camp == null) return NotFound();
 
                 _mapper.Map(model, camp);
