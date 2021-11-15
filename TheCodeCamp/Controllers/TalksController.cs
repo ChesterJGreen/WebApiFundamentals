@@ -77,13 +77,14 @@ namespace TheCodeCamp.Controllers
                         }
                     }
                 }
-                return InternalServerError();
+                
             }
             catch (Exception ex)
             {
 
                 return InternalServerError(ex);
             }
+            return BadRequest(ModelState);
         }
     }
 }
