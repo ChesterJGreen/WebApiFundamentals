@@ -70,7 +70,7 @@ namespace TheCodeCamp.Controllers
         {
             try
             {
-                var result = await _repository.GetCampAsync(moniker, true;
+                var result = await _repository.GetCampAsync(moniker, true);
                 if (result == null) return NotFound();
 
                 return Ok(_mapper.Map<CampModel>(result));
