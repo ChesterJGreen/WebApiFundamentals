@@ -371,3 +371,6 @@ C:\Training\C#\webapifundamentals\TheCodeCamp\bin\System.Text.Encodings.Web.xml
 C:\Training\C#\webapifundamentals\TheCodeCamp\bin\System.Threading.Tasks.Extensions.xml
 C:\Training\C#\webapifundamentals\TheCodeCamp\bin\AutoMapper.dll
 C:\Training\C#\webapifundamentals\TheCodeCamp\bin\AutoMapper.xml
+C:\Training\C#\webapifundamentals\TheCodeCamp\bin\Microsoft.AspNet.WebApi.Versioning.dll
+C:\Training\C#\webapifundamentals\TheCodeCamp\bin\Microsoft.AspNet.WebApi.Versioning.pdb
+C:\Training\C#\webapifundamentals\TheCodeCamp\bin\Microsoft.AspNet.WebApi.Versioning.xml
