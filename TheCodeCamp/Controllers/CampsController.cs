@@ -47,6 +47,7 @@ namespace TheCodeCamp.Controllers
             }
             
         }
+        [MapToApiVersion("1.0")]
         [Route("{moniker}", Name = "GetCamp")]
         public async Task<IHttpActionResult> Get(string moniker, bool includeTalks = false)
         {
@@ -55,6 +56,23 @@ namespace TheCodeCamp.Controllers
                 var result = await _repository.GetCampAsync(moniker, includeTalks);
                 if (result == null) return NotFound();
             
+                return Ok(_mapper.Map<CampModel>(result));
+            }
+            catch (Exception ex)
+            {
+
+                return InternalServerError(ex);
+            }
+        }
+        [MapToApiVersion("1.1")]
+        [Route("{moniker}", Name = "GetCamp")]
+        public async Task<IHttpActionResult> Get(string moniker)
+        {
+            try
+            {
+                var result = await _repository.GetCampAsync(moniker, true;
+                if (result == null) return NotFound();
+
                 return Ok(_mapper.Map<CampModel>(result));
             }
             catch (Exception ex)
