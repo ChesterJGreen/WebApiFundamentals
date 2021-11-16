@@ -11,9 +11,12 @@ using TheCodeCamp.Models;
 using System.Web.Http.Routing;
 using RouteAttribute = System.Web.Http.RouteAttribute;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
+using Microsoft.Web.Http;
 
 namespace TheCodeCamp.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("1.1")]
     [RoutePrefix("api/camps")]
     public class CampsController : ApiController
     {
