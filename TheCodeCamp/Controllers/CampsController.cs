@@ -48,7 +48,7 @@ namespace TheCodeCamp.Controllers
             
         }
         [MapToApiVersion("1.0")]
-        [Route("{moniker}", Name = "GetCamp")]
+        [Route("{moniker}", Name = "GetCamp11")]
         public async Task<IHttpActionResult> Get(string moniker, bool includeTalks = false)
         {
             try

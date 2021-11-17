@@ -48,11 +48,11 @@ namespace TheCodeCamp.Controllers
         }
         
         [Route("{moniker}", Name = "GetCamp20")]
-        public async Task<IHttpActionResult> Get(string moniker, bool includeTalks = false)
+        public async Task<IHttpActionResult> Get(string moniker)
         {
             try
             {
-                var result = await _repository.GetCampAsync(moniker, includeTalks);
+                var result = await _repository.GetCampAsync(moniker, true);
                 if (result == null) return NotFound();
             
                 return Ok(new { success = true, camp = _mapper.Map<CampModel>(result) });
