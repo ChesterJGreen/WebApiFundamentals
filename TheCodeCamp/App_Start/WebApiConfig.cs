@@ -39,7 +39,7 @@ namespace TheCodeCamp
            //Change case of JSON
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-            var ConstraintResolver = new DefaultInlineConstraintResolver()
+            var constraintResolver = new DefaultInlineConstraintResolver()
             {
                 ConstraintMap =
                 {
@@ -47,7 +47,7 @@ namespace TheCodeCamp
                 }
             };
             // Web API routes
-            config.MapHttpAttributeRoutes();
+            config.MapHttpAttributeRoutes(constraintResolver);
 
       //config.Routes.MapHttpRoute(
       //    name: "DefaultApi",
